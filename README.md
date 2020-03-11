@@ -15,12 +15,39 @@
 Provides cutting edge build and bundle capabilities with zero configuration required by default.
 <br>
 
+```js
+// webpack.config.js
+const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
+
+module.exports = (env, argv) => createWebpackConfig({ argv });
+```
+<br>
+
 #### Elegance
 
 Exposes functions that can be used as building blocks to compose more complex build processes.<br>
 The zero configuration build process was built using these functions.<br>
-<br>
 
+```js
+// webpack.config.js
+const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
+
+module.exports = (env, argv) => createWebpackConfig({
+    argv,
+    entries: {
+        main: './scripts/index.js',
+        styles: './styles/styles.scss',
+        'test/styles': './styles/test/test.scss',
+        'advanced/bundle': {
+            file: './scripts/index.js',
+            plugins: [],
+            polyfill: false,
+        },
+    },
+    nodeModulesToBabel: [],
+});
+```
+<br><br>
 
 ### Getting Started
 
