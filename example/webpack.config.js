@@ -1,4 +1,4 @@
-const { createWebpackConfig } = require('../lib');
+const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
 
 module.exports = (env, argv) => createWebpackConfig({
     argv,
