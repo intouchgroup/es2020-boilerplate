@@ -108,9 +108,9 @@ module.exports = {
 
 #### Utility:
 
-`createWebpackConfig` - create cutting edge Webpack configs
+**`createWebpackConfig`** - create cutting edge Webpack configs
 
-`generateConfig` - built out of the other functions below, and called by `createWebpackConfig` to generate the config object
+**`generateConfig`** - built out of the other functions below, and called by `createWebpackConfig` to generate the config object
 <br><br>
 
 #### Settings:
@@ -130,22 +130,22 @@ Some settings are required by Webpack. These settings are included automatically
 
 At least one set of rules is required for Webpack to process any file type. These rules are included automatically when using `createWebpackConfig`. You can also use these rules to build your own Webpack config.
 
-`rulesForScripts` - includes default rules for processing JS with Webpack loaders
+**`rulesForScripts`** - includes default rules for processing JS with Webpack loaders
 
-`rulesForStyles` - includes default rules for processing CSS with Webpack loaders
+**`rulesForStyles`** - includes default rules for processing CSS with Webpack loaders
 <br><br>
 
 #### Plugins
 
 Plugins are all optional. The style plugins are included automatically when using `createWebpackConfig`. Plugins can be passed with individual `entries` when using `createWebpackConfig`. You can also use these plugins to build your own Webpack config.
 
-`pluginCopyFiles` - copy files from the source directory to the output directory 
+**`pluginCopyFiles`** - copy files from the source directory to the output directory 
 
-`pluginIgnoreOutput` - ignores files that Webpack tries to output with the specifies names
+**`pluginIgnoreOutput`** - ignores files that Webpack tries to output with the specifies names
 
-`pluginLintStyles` - lints styles with stylelint, runs by default when using `createWebpackConfig`
+**`pluginLintStyles`** - lints styles with stylelint, runs by default when using `createWebpackConfig`
 
-`pluginExtractStyles` - process CSS in JS and enable HMR, runs by default when using `createWebpackConfig`
+**`pluginExtractStyles`** - process CSS in JS and enable HMR, runs by default when using `createWebpackConfig`
 
-`pluginOptimizeStyles` - minimize CSS and update source maps, runs by default when using `createWebpackConfig`
+**`pluginOptimizeStyles`** - minimize CSS and update source maps, runs by default when using `createWebpackConfig`
 <br><br>
