@@ -29,7 +29,7 @@ The zero configuration build process was built using these functions.<br>
 
 ```js
 // webpack.config.js
-const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
+const { createWebpackConfig, pluginCopyFiles } = require('@intouchgroup/es2020-boilerplate');
 
 module.exports = (env, argv) => createWebpackConfig({
     argv,
@@ -39,7 +39,9 @@ module.exports = (env, argv) => createWebpackConfig({
         'test/styles': './styles/test/test.scss',
         'advanced/bundle': {
             file: './scripts/index.js',
-            plugins: [],
+            plugins: [
+                pluginCopyFiles({ from: 'assets', to: 'assets' }),
+            ],
             polyfill: false,
         },
     },
