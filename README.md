@@ -17,7 +17,7 @@ Provides cutting edge build and bundle capabilities with zero configuration requ
 
 #### Elegance
 
-Exposes functions that can be used as building blocks to compose more complex build processes.
+Exposes functions that can be used as building blocks to compose more complex build processes.<br>
 The zero configuration build process was built using these functions.<br>
 <br>
 
