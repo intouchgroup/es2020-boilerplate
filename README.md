@@ -6,9 +6,9 @@
 ### Goals
 
 
-🌈 Excellent developer experience<br />
-🚀 Powerful advanced tooling<br />
-🏛 Standardized project architecture<br />
+\t🌈 Excellent developer experience<br />
+\t🚀 Powerful advanced tooling<br />
+\t🏛 Standardized project architecture<br />
 
 
 
