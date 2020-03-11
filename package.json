@@ -1,6 +1,6 @@
 {
 	"name": "@intouchgroup/es2020-boilerplate",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Build processes for ES2020 and SCSS with IE11 support",
 	"main": "lib/index.js",
 	"bin": {

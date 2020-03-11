@@ -139,7 +139,7 @@ At least one set of rules is required for Webpack to process any file type. Thes
 **`rulesForStyles`** - includes default rules for processing CSS with Webpack loaders
 <br><br>
 
-#### Plugins
+#### Plugins:
 
 Plugins are all optional. The style plugins are included automatically when using `createWebpackConfig`. Plugins can be passed with individual `entries` when using `createWebpackConfig`. You can also use these plugins to build your own Webpack config.
 
