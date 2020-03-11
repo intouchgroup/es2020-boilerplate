@@ -71,28 +71,78 @@ module.exports = (env, argv) => createWebpackConfig({
 
 ### API Reference
 
-`defineEntry`
+A valid Webpack configuration has three main parts: **settings**, **module rules**, and **plugins**.
 
-`defineOutput`
+Calling `createWebpackConfig` with an optional settings object will generate a fully valid Webpack configuration.
 
-`commonConfiguration`
+You may also choose to build your own Webpack configuration using the available building block functions.
 
-`devServerConfiguration`
+All of the **settings** and **module rules** functions use the spread operator. The `generateConfig` function is a good example of building a valid config.
 
-`rulesForScripts`
+```js
+// webpack.config.js
+import { defineEntry, defineOutput, commonSettings, devServerSettings, rulesForScripts, rulesForStyles, pluginLintStyles, pluginExtractStyles, pluginOptimizeStyles, pluginCopyFiles } from '@intouchgroup/es2020-boilerplate';
 
-`rulesForStyles`
+module.exports = {
+    ...defineEntry(doPolyfill, entryFilename),
+    ...defineOutput(jsOutputFilename),
+    ...commonSettings(devMode),
+    ...devServerSettings(devMode),
 
-`pluginCopyFiles`
+    module: {
+        rules: [
+            ...rulesForScripts(devMode, nodeModuleToBabel),
+            ...rulesForStyles(devMode),
+        ],
+    },
 
-`pluginIgnoreOutput`
+    plugins: [
+        pluginLintStyles(),
+        pluginExtractStyles(cssOutputFilename),
+        pluginOptimizeStyles(devMode),
+        pluginCopyFiles({ from: 'index.html', to: 'index.html' }),
+    ],
+};
+```
 
-`pluginLintStyles`
 
-`pluginExtractStyles`
+#### Utility:
 
-`pluginOptimizeStyles`
+`createWebpackConfig` - create cutting edge Webpack configs
 
-`generateConfig`
+`generateConfig` - built out of the other functions below, and called by `createWebpackConfig` to generate the config object
 
-`createWebpackConfig`
+
+#### Settings:
+
+`defineEntry` - includes input file setting, **required**
+
+`defineOutput` - includes output file setting, **required**
+
+`commonSettings` - includes default general settings for Webpack, **recommended**
+
+`devServerSettings` - includes default settings for Webpack Dev Server
+
+
+#### Module Rules:
+
+At least one set of rules is required for Webpack to process any file type.
+
+`rulesForScripts` - includes default rules for processing JS with Webpack loaders
+
+`rulesForStyles` - includes default rules for processing CSS with Webpack loaders
+
+
+#### Plugins
+
+Plugins are all optional
+
+`pluginCopyFiles` - copy files from the source directory to the output directory 
+
+`pluginIgnoreOutput` - ignores files that Webpack tries to output with the specifies names
+
+`pluginLintStyles` - lints styles with stylelint, runs by default when using `createWebpackConfig`
+
+`pluginExtractStyles` - process CSS in JS and enable HMR, runs by default when using `createWebpackConfig`
+
+`pluginOptimizeStyles` - minimize CSS and update source maps, runs by default when using `createWebpackConfig`
