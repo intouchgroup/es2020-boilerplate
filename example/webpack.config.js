@@ -1,6 +1,7 @@
 const { createWebpackConfig } = require('../lib');
 
 module.exports = (env, argv) => createWebpackConfig({
+    argv,
     entries: {
         primary: './scripts/index.js',
         styles: './styles/styles.scss',
@@ -11,4 +12,5 @@ module.exports = (env, argv) => createWebpackConfig({
             polyfill: false,
         },
     },
+    nodeModulesToBabel: [],
 });
