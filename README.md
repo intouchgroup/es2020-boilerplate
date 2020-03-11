@@ -45,7 +45,9 @@ module.exports = (env, argv) => createWebpackConfig({
             polyfill: false,
         },
     },
-    nodeModulesToBabel: [],
+    nodeModulesToBabel: [
+        'react-spring',
+    ],
 });
 ```
 <br>
