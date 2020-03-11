@@ -21,7 +21,6 @@ const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
 
 module.exports = (env, argv) => createWebpackConfig({ argv });
 ```
-<br>
 
 #### Elegance
 
@@ -47,7 +46,7 @@ module.exports = (env, argv) => createWebpackConfig({
     nodeModulesToBabel: [],
 });
 ```
-<br><br>
+<br>
 
 ### Getting Started
 
