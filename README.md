@@ -1,4 +1,4 @@
-# @intouchgroup/es2020-boilerplate 🔮
+# @intouchgroup/es2020-boilerplate
 
 🔮 Build processes for ES2020 and SCSS with IE11 support
 
