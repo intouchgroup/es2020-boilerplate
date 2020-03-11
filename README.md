@@ -117,13 +117,13 @@ module.exports = {
 
 Some settings are required by Webpack. These settings are included automatically when using `createWebpackConfig`. You can also use these settings to build your own Webpack config.
 
-`defineEntry` - includes input file setting, **required**
+**`defineEntry`** - includes input file setting, **required**
 
-`defineOutput` - includes output file setting, **required**
+**`defineOutput`** - includes output file setting, **required**
 
-`commonSettings` - includes default general settings for Webpack, **recommended**
+**`commonSettings`** - includes default general settings for Webpack, **recommended**
 
-`devServerSettings` - includes default settings for Webpack Dev Server
+**`devServerSettings`** - includes default settings for Webpack Dev Server
 <br><br>
 
 #### Module Rules:
