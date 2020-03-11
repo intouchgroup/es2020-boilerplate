@@ -111,7 +111,7 @@ module.exports = {
 `createWebpackConfig` - create cutting edge Webpack configs
 
 `generateConfig` - built out of the other functions below, and called by `createWebpackConfig` to generate the config object
-<br>
+<br><br>
 
 #### Settings:
 
@@ -124,7 +124,7 @@ Some settings are required by Webpack. These settings are included automatically
 `commonSettings` - includes default general settings for Webpack, **recommended**
 
 `devServerSettings` - includes default settings for Webpack Dev Server
-<br>
+<br><br>
 
 #### Module Rules:
 
@@ -133,7 +133,7 @@ At least one set of rules is required for Webpack to process any file type. Thes
 `rulesForScripts` - includes default rules for processing JS with Webpack loaders
 
 `rulesForStyles` - includes default rules for processing CSS with Webpack loaders
-<br>
+<br><br>
 
 #### Plugins
 
@@ -148,4 +148,4 @@ Plugins are all optional. The style plugins are included automatically when usin
 `pluginExtractStyles` - process CSS in JS and enable HMR, runs by default when using `createWebpackConfig`
 
 `pluginOptimizeStyles` - minimize CSS and update source maps, runs by default when using `createWebpackConfig`
-<br>
+<br><br>
