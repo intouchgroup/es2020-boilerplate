@@ -18,8 +18,9 @@ Provides cutting edge build and bundle capabilities with zero configuration requ
 #### Elegance
 
 Exposes functions that can be used as building blocks to compose more complex build processes.
-The zero configuration build process was built using these functions.<br><br>
+The zero configuration build process was built using these functions.<br>
 <br>
+
 
 ### Getting Started
 
@@ -31,7 +32,6 @@ The zero configuration build process was built using these functions.<br><br>
 2. Bootstrap a new project:<br>
 `es2020-boilerplate my-new-project`<br><br>
 
-
 #### Existing Project
 
 1. Install the module as a dev dependency:<br>
@@ -41,7 +41,7 @@ The zero configuration build process was built using these functions.<br><br>
 `es2020-boilerplate`<br><br>
 
 3. Update `webpack.config.js` as necessary<br><br>
-<br>
+
 
 ### API Reference
 
