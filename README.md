@@ -5,9 +5,11 @@
 
 ### Goals
 
-🌈 Excellent developer experience
-🚀 Powerful advanced tooling
-🏛 Standardized project architecture
+<ul>
+<li>🌈 Excellent developer experience</li>
+<li>🚀 Powerful advanced tooling</li>
+<li>🏛 Standardized project architecture</li>
+</ul>
 
 
 #### Simplicity
