@@ -5,22 +5,21 @@
 
 ### Goals
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;🌈 Excellent developer experience<br>
 &nbsp;&nbsp;&nbsp;&nbsp;🚀 Powerful advanced tooling<br>
 &nbsp;&nbsp;&nbsp;&nbsp;🏛 Standardized project architecture<br>
-
+<br>
 
 #### Simplicity
 
 Provides cutting edge build and bundle capabilities with zero configuration required by default.
-
+<br>
 
 #### Elegance
 
 Exposes functions that can be used as building blocks to compose more complex build processes.
-The zero configuration build process was built using these functions.
-
+The zero configuration build process was built using these functions.<br><br>
+<br>
 
 ### Getting Started
 
@@ -42,7 +41,7 @@ The zero configuration build process was built using these functions.
 `es2020-boilerplate`<br><br>
 
 3. Update `webpack.config.js` as necessary<br><br>
-
+<br>
 
 ### API Reference
 
