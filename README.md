@@ -23,7 +23,7 @@ module.exports = (env, argv) => createWebpackConfig({ argv });
 ```
 
 Webpack will look in the `src` directory for `scripts/index.js`, `styles/styles.scss`, and `index.html`.
-<br>
+<br><br>
 
 #### Flexibility
 
@@ -38,10 +38,14 @@ module.exports = (env, argv) => createWebpackConfig({
     entries: {
         // Output files will be named according to their key and input file extension
 
-        main: './scripts/index.js', // Generates main.js
-        styles: './styles/styles.scss', // Generates styles.css
+        // Generates main.js
+        main: './scripts/index.js',
 
-        'test/styles': './styles/test/test.scss', // Generates test/styles.css
+        // Generates styles.css
+        styles: './styles/styles.scss',
+
+        // Generates test/styles.css
+        'test/styles': './styles/test/test.scss',
 
         // Generates advanced/bundle.js without polyfills
         'advanced/bundle': {
@@ -51,8 +55,6 @@ module.exports = (env, argv) => createWebpackConfig({
             ],
             polyfill: false,
         },
-
-
     },
     nodeModulesToBabel: [
         'react-spring',
