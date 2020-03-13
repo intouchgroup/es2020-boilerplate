@@ -18,7 +18,7 @@
 		"@babel/core": "7.8.7",
 		"@babel/preset-env": "7.8.7",
 		"@babel/register": "7.8.6",
-		"@intouchgroup/es2020-boilerplate": "0.0.1",
+		"@intouchgroup/es2020-boilerplate": "0.1.0",
 		"@intouchgroup/eslint-config": "latest",
 		"autoprefixer": "9.7.4",
 		"babel-loader": "8.0.6",
