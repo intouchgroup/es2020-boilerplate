@@ -12,7 +12,7 @@
 
 #### Simplicity
 
-Provides cutting edge build and bundle capabilities with zero configuration required by default.
+Provides cutting edge build, bundle, and polyfill capabilities with zero configuration required by default.
 <br>
 
 ```js
@@ -22,10 +22,12 @@ const { createWebpackConfig } = require('@intouchgroup/es2020-boilerplate');
 module.exports = (env, argv) => createWebpackConfig({ argv });
 ```
 
-#### Elegance
+Webpack will look in the `src` directory for `scripts/index.js`, `styles/styles.scss`, and `index.html`.
+<br>
 
-Exposes functions that can be used as building blocks to compose more complex build processes.<br>
-The zero configuration build process was built using these functions.<br>
+#### Flexibility
+
+Generate multiple output files with ease. Tweak input and output directories, turn off polyfilling, and add Webpack plugins with minimal configuration.
 
 ```js
 // webpack.config.js
@@ -34,9 +36,14 @@ const { createWebpackConfig, pluginCopyFiles } = require('@intouchgroup/es2020-b
 module.exports = (env, argv) => createWebpackConfig({
     argv,
     entries: {
-        main: './scripts/index.js',
-        styles: './styles/styles.scss',
-        'test/styles': './styles/test/test.scss',
+        // Output files will be named according to their key and input file extension
+
+        main: './scripts/index.js', // Generates main.js
+        styles: './styles/styles.scss', // Generates styles.css
+
+        'test/styles': './styles/test/test.scss', // Generates test/styles.css
+
+        // Generates advanced/bundle.js without polyfills
         'advanced/bundle': {
             file: './scripts/index.js',
             plugins: [
@@ -44,11 +51,45 @@ module.exports = (env, argv) => createWebpackConfig({
             ],
             polyfill: false,
         },
+
+
     },
     nodeModulesToBabel: [
         'react-spring',
     ],
 });
+```
+<br>
+
+#### Elegance
+
+Exposes functions that can be used as building blocks to compose more complex build processes.<br>
+The zero configuration build process was built using these functions.<br>
+
+```js
+// webpack.config.js
+import { defineEntry, defineOutput, commonSettings, devServerSettings, rulesForScripts, rulesForStyles, pluginLintStyles, pluginExtractStyles, pluginOptimizeStyles, pluginCopyFiles } from '@intouchgroup/es2020-boilerplate';
+
+module.exports = {
+    ...defineEntry(doPolyfill, entryFilename),
+    ...defineOutput(jsOutputFilename),
+    ...commonSettings(devMode),
+    ...devServerSettings(devMode),
+
+    module: {
+        rules: [
+            ...rulesForScripts(devMode, nodeModuleToBabel),
+            ...rulesForStyles(devMode),
+        ],
+    },
+
+    plugins: [
+        pluginLintStyles(),
+        pluginExtractStyles(cssOutputFilename),
+        pluginOptimizeStyles(devMode),
+        pluginCopyFiles({ from: 'index.html', to: 'index.html' }),
+    ],
+};
 ```
 <br>
 
@@ -82,33 +123,7 @@ Calling `createWebpackConfig` with an optional settings object will generate a f
 You may also choose to build your own Webpack configuration using the available building block functions.
 
 All of the **settings** and **module rules** functions use the spread operator. The `generateConfig` function is a good example of building a valid config.
-
-```js
-// webpack.config.js
-import { defineEntry, defineOutput, commonSettings, devServerSettings, rulesForScripts, rulesForStyles, pluginLintStyles, pluginExtractStyles, pluginOptimizeStyles, pluginCopyFiles } from '@intouchgroup/es2020-boilerplate';
-
-module.exports = {
-    ...defineEntry(doPolyfill, entryFilename),
-    ...defineOutput(jsOutputFilename),
-    ...commonSettings(devMode),
-    ...devServerSettings(devMode),
-
-    module: {
-        rules: [
-            ...rulesForScripts(devMode, nodeModuleToBabel),
-            ...rulesForStyles(devMode),
-        ],
-    },
-
-    plugins: [
-        pluginLintStyles(),
-        pluginExtractStyles(cssOutputFilename),
-        pluginOptimizeStyles(devMode),
-        pluginCopyFiles({ from: 'index.html', to: 'index.html' }),
-    ],
-};
-```
-<br>
+<br><br>
 
 #### Utility:
 
