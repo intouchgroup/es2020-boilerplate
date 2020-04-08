@@ -15,7 +15,7 @@
 	"author": "Intouch Group",
 	"license": "UNLICENSED",
 	"devDependencies": {
-		"@intouchgroup/es2020-boilerplate": "0.1.0"
+		"@intouchgroup/es2020-boilerplate": "0.5.0"
 	},
 	"dependencies": {
 		"core-js": "3.6.4"

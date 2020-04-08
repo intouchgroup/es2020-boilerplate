@@ -1,5 +1,5 @@
-@import '~Styles/vars';
+@use '~Styles/vars' as vars;
 
 body {
-	background: $color-red;
+	background: vars.$color-red;
 }
